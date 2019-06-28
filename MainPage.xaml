@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="LiveChartsUwpCSharp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LiveChartsUwpCSharp"
+    xmlns:lvc="using:LiveCharts.Uwp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <AppBar Background="#33ff00ff" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal">
+
+                    <AppBarButton x:Name="btnBack" Label="OpenFile" Click="OnClickFileSelect">
+                        <AppBarButton.Icon>
+                            <SymbolIcon Symbol="OpenFile" />
+                        </AppBarButton.Icon>
+                    </AppBarButton>
+                </StackPanel>
+            </Grid>
+        </AppBar>
+        <Border BorderBrush="White" BorderThickness="2" Margin="300,70,300,0" Height="295" VerticalAlignment="Top">
+            <Image x:Name="Image" Margin="20,20,20,20"/>
+        </Border>
+        <Grid Margin="20,390,20,10">
+            <lvc:CartesianChart x:Name="LiveChartsGraph" Series="{x:Bind Path=m_seriesCollection}" />
+        </Grid>
+    </Grid>
+</Page>
